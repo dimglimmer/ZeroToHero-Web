@@ -4,6 +4,11 @@ Hey everyone,
 
 This is a follow up e-mail to the first Guten Code lesson, which took place on Thursday, March 5, 2015. We learned how to code in HTML and CSS for the first time, and were introduced to a powerful new framework called Bootstrap which will help us get started in building modern pages quickly.
 
+Two quick things:
+
+1. Make sure to join the Facebook group to ask questions, get immediate updates, and connect with other students: https://www.facebook.com/groups/gutencode/
+2. If you missed last class, that's ok! Make sure to look over the class files before coming to the next one. Try to build your own page and you'll be all set.
+
 ## Class Files
 
 I've added three folders to this website which you can browse and download to catch up on the class material. Each folder has files which are completely annotated, describing the lines of code written, and has additional links for follow up resources.
@@ -11,10 +16,6 @@ I've added three folders to this website which you can browse and download to ca
 * `basic_page`: is the page we built to introduce us to HTML and CSS. Three files are relevant here: `no_css.html`, `with_css.html` and `css/style.css`. 
 * `bootstrap_page`: is the page we built to introduce us to Bootstrap. I discuss in length how the Grid system works, how to implement the Tab control, and how to add a custom theme and icons. The file you want is `personalpage.html`. 
 * `starter_template`: if you want to start building your own pages, start here. I made a blank html file which includes Bootstrap which you can start working with without issues. 
-
-Two quick things:
-1. Make sure to join the Facebook group to ask questions, get immediate updates, and connect with other students: https://www.facebook.com/groups/gutencode/
-2. If you missed last class, that's ok! Make sure to look over the class files before coming to the next one. Try to build your own page and you'll be all set.
 
 ## Next Steps
 
