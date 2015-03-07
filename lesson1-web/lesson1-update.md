@@ -12,6 +12,10 @@ I've added three folders to this website which you can browse and download to ca
 * `bootstrap_page`: is the page we built to introduce us to Bootstrap. I discuss in length how the Grid system works, how to implement the Tab control, and how to add a custom theme and icons. The file you want is `personalpage.html`. 
 * `starter_template`: if you want to start building your own pages, start here. I made a blank html file which includes Bootstrap which you can start working with without issues. 
 
+Two quick things:
+1. Make sure to join the Facebook group to ask questions, get immediate updates, and connect with other students: https://www.facebook.com/groups/gutencode/
+2. If you missed last class, that's ok! Make sure to look over the class files before coming to the next one. Try to build your own page and you'll be all set.
+
 ## Next Steps
 
 On Thursday, March 12 we're learning Ruby on Rails for the first time. **By next week, you need to have installed the following software:**
