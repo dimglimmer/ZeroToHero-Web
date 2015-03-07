@@ -16,10 +16,9 @@ I've added three folders to this website which you can browse and download to ca
 
 On Thursday, March 12 we're learning Ruby on Rails for the first time. *By next week, you need to have installed the following software:*
 
-Heroku Toolbelt: https://toolbelt.heroku.com/
-
-Ruby on Rails (Mac Tutorial): https://gorails.com/setup/osx/10.9-mavericks
-Ruby on Rails (Windows Tutorial): http://railsftw.bryanbibat.net/
+* Heroku Toolbelt: https://toolbelt.heroku.com/
+* Ruby on Rails (Mac Tutorial): https://gorails.com/setup/osx/10.9-mavericks
+* Ruby on Rails (Windows Tutorial): http://railsftw.bryanbibat.net/
 
 For the Ruby on Rails links above, you need to go through each tutorial and install the required software or you will NOT be able to participate. Make sure to go through all of the required steps so that you can navigate to http://localhost and see a sample webpage. 
 
