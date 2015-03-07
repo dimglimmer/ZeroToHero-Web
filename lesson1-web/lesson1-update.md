@@ -14,7 +14,7 @@ I've added three folders to this website which you can browse and download to ca
 
 ## Next Steps
 
-On Thursday, March 12 we're learning Ruby on Rails for the first time. *By next week, you need to have installed the following software:*
+On Thursday, March 12 we're learning Ruby on Rails for the first time. **By next week, you need to have installed the following software:**
 
 * Heroku Toolbelt: https://toolbelt.heroku.com/
 * Ruby on Rails (Mac Tutorial): https://gorails.com/setup/osx/10.9-mavericks
@@ -23,7 +23,7 @@ On Thursday, March 12 we're learning Ruby on Rails for the first time. *By next 
 For the Ruby on Rails links above, you need to go through each tutorial and install the required software or you will NOT be able to participate. Make sure to go through all of the required steps so that you can navigate to http://localhost and see a sample webpage. 
 
 ## Contest
-** This is for Western students only **
+**This is for Western students only**
 
 For those who really want to take the time and apply what we've learned, I've got a contest. Create your own personal web page with what we've learned and post it on our Facebook group. The post with the most likes (you can ask your friends outside of the group to like it too) gets to win a new Google ChromeCast!
 
