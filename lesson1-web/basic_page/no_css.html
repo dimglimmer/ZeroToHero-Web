@@ -1,15 +1,79 @@
- <!-- 
+<!-- 
 	==========================================
 	Comments
 	==========================================
 
-	This is a comment
+	Comments are special tags in an HTML document that the browser ignores. 
+	The browser literally notices the closing tag and ignores every subsequent
+	character until it hits the ending tag.
+
+	Developers use comments to communicate information to one another. They'll
+	often use it to describe code. I'll be using it to explain the HTML below. 
+
+	Unfortunately, I cannot copy the tag here because it breaks the comment, 
+	but see the top and bottom of the document (<! >) part, to see how
+	the starting and ending tags are defined.
 	
 	==========================================
 	Basic Document Structure
 	==========================================
+	
+	We write web pages with two languages: HTML and CSS.
 
-	Indentation is important
+	HTML describes the content and structure of a page. 
+	CSS describes the layout and design of a page. We talk about this in 
+	css/style.css 
+
+	We keep HTML and CSS separate, so that we can easily exchange a new design
+	for a piece of content, or a new piece of content for a design. 
+
+	Each HTML document has the following structure:
+
+	<html>
+		<head>
+		</head>
+		<body>
+		</body>
+	</html>
+
+	Everything in between <head> and </head> is used to describe the document.
+	No text in between this tag is actually shown on the main screen. You can
+	use special, "head-friendly" tags to describe things like the pages title,
+	reference other resources, etc.
+
+	Everything in the body tag is shown on the screen.
+
+	==========================================
+	Indentation
+	==========================================
+
+	Throughout this document, you'll notice I use a strict indentation scheme.
+	When I have a new element, I'll often put it on a separate line and indent it.
+	You'll learn that you can have elements within elements. To prevent being
+	confused or lost when navigating your code, indentation helps create structure. 
+
+	Browsers don't care about indentation, but other programmers, including myself,
+	do. 
+
+	==========================================
+	Elements and Tags
+	==========================================
+
+	HTML documents are defined by a series of elements. You identify an 
+	HTML element if it's a piece of text surrounded by a < and >. This part
+	of an HTML element is called a tag. Tags are a special part of the HTML
+	document that are used to describe a piece of text.
+
+	For example:
+
+	<h1>Hello world</h1>
+
+	The above is an HTML element. We can tell because it's surrounded by
+	two tags <h1> and </h1>. This element is a Header element and it consists
+	of an opening and closing tag (the / is part of the closing tag). The text
+	in between the tags is just a generic piece of text. What the browser will
+	do is it will take that text and turn it into a bold, large font, which is
+	what HTML defines to be a Header. 
 -->
 <html>
 	<head>
@@ -17,6 +81,10 @@
 			==========================================
 			Titles
 			==========================================
+
+			Here is one special head-friendly element that will describe the page's
+			title. Browsers will use the text between the title elements as the
+			text on the "tab", and other places. 
 		-->
 		<title>Artur's Page</title>
 		<style>
@@ -26,53 +94,209 @@
 		</style>
 	</head>
 	<body>
-		<!-- 
-			==========================================
-			Elements and Tags
-			==========================================
-		-->
+		<!--
+				==========================================
+				Headers and Paragraphs
+				==========================================
+
+				Header <h#> and Paragraph tags <p> describe ordinary text as content for the
+				browser. Paragraph tags are basic pieces of text, whereas headers may describe
+				titles.
+
+				Headers have a special, and almost arbitrary, nature. There are 6 defined header
+				tags in HTML. They are: h1, h2, h3, h4, h5, and h6. Each subsequent tag is, by
+				default, defined to be smaller than the preceding one. The idea is that the HTML
+				authors believed that, broadly, that most documents don't go more than 6
+				titles deep. 
+			-->
 		<h1>Artur Tsurkan</h1>
 		<p>Student at Western University</p>
 
 		<!-- 
-			==========================================
-			Images
-			==========================================
-			Attributes 
+				==========================================
+				Images
+				==========================================
+	
+				Images are an interesting tag because they don't necessarily describe text. 
+				Instead, the browser uses the image tag to actually put an image file where
+				the tag is defined. How does that work? With Attributes
+				
+				==========================================
+				Attributes
+				========================================== 
 
-			Using Links for Images
+				Remember, we define tags by putting a piece of text between < and > (and </ and >
+				for closing tags). However, in addition to the name of the tag, you can also
+				put additional pieces of text, separated by a space. This additional text is
+				called an attribute. They refer to "features" of a tag. 
 
-			Using Files for Images
+				For images, this feature is the "source" of an image, and the name of the attribute
+				is called src. Each attribute has an attribute name and attribute value. The
+				structure of an attribute is like so:
 
-			Self-Closing Tags
-		-->
+					attribute_name="attribute_value"
+				
+				==========================================
+				Using Files for Images
+				==========================================
+				
+				The src attribute is used to indicate to the browser where the file is
+				located on my computer. Here, I use a relative path.
 
-		<img src="img/me.png" />
+				What does relative means? It means I'm telling the browser this is where my
+				file is located, relative to the location of this file (the HTML file). 
+				Thus, the browser will first use the location of this file, and then use
+				the value for the src file to find the Image file. 
+
+				I then write css/ to tell the browser that there is a img/ folder in the same 
+				folder as this HTML file, and in that there is a me.png file.
+				
+				==========================================
+				Using Links for Images
+				==========================================
+
+				Instead of files, you can also use a link as the value for this tag. Thus, for 
+				the src attribute, you can literally write:
+
+				http://samaghon.com/z2h/me.png
+
+				And you will render the same image. You can't just substitute any link to the
+				src attribute. It must be a link directly to the image. You can test this in
+				two ways:
+
+				1. You can see if it has a common image extension (.jpg, .jpeg, .png)
+				2. You can see if, when you load the link your browser, it only loads the image
+				
+				==========================================
+				Self-Closing Tags
+				==========================================
+
+				One thing you might notice is that the image element does't have a partner </img>
+				tag at the end. You can just interpret that this is the way it is and move on.
+
+				Still, this does make some logical sense. Tags wrapped around arbitrary text
+				content are used to describe what that content is and how it should look on the
+				screen. Images don't describe anything. Instead, they replace the tag with the file. 
+				So there's no need to add any additional text between two tags. 
+			-->
+		<img src="img/me.png">
 		<h2>About Me</h2>
-		<!-- Generic text generated by www.lipsum.com -->
+		<!-- 
+			==========================================
+			Lorem Ipsum - Generic Text
+			==========================================
+			Sometimes, you might be focused on just making the design of your website, without
+			having the text ready. In order to see how that text would look like, you need some
+			filler text that can aesthetically simulate what real text would look like.
+
+			That's where "Lorem ipsum" comes in. Lorem ipsum is a generic, non-sensical language
+			that can be algorithmically generated. You can then copy it in as a placeholder.
+
+			Below is a website to generate generic text. I used it to generate the text in the p tag
+
+			Generic text generated by www.lipsum.com 
+		-->
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur quis urna in scelerisque. Phasellus leo mi, iaculis id libero a, posuere ullamcorper velit. Sed quis orci semper, maximus est quis, porta justo. Sed mauris sem, pulvinar at nisi maximus, consequat dapibus augue. Nulla sed nisl neque. Praesent ut ex dui. Nunc eu sodales nunc. In finibus elementum nibh, eget mollis nunc posuere nec. Proin mollis nibh vitae posuere luctus. Quisque vestibulum maximus velit at consequat. Donec vitae purus ac lorem tristique aliquam. Praesent a quam at nibh auctor elementum.
 		</p>
 		<p>Find me on:</p>
-		<!--
-			==========================================
-			Anchors (Links)
-			==========================================
 
-			Why are they inline?
-		-->
+		<!--
+				==========================================
+				Anchors (Links)
+				==========================================
+
+				Anchor tags allow us to place links on the page. We use the href attribute to provide a
+				valid link that the browser will go to when the text is clicked.
+
+				The anchor tag is coupled with some default presentation rules (the link is underlined,
+				and is in blue). We'll learn how to edit this later.
+
+				Lastly, you can place different types of values for the href tag besides links. You
+				can link directly to files (as you would with the img tag). For example, if I had
+				a separate HTML file in the same folder as this HTML file, the link below would
+				make the browser open this separate webpage:
+
+					<a href="other_file.html">Go to my other page!</a>
+
+				You should try this on your own time. 
+				
+				==========================================
+				Why are they inline?
+				==========================================
+				
+				If you try to load this page in your browser, you'll notice these links show up
+				on the same line. Other elements, like paragraphs, are placed on a new line. 
+
+				Why is this? By default, HTML has specific rules on how certain elements should
+				show up on the screen.
+
+				Paragraph tags (and header tags, and images, etc.) are called "block" elements, 
+				and this means that they are supposed to take up the full width of whatever
+				element they are a part of.
+
+				Anchor tags (and form elements, etc.) are called "inline" elements, and this
+				means they try to stay on the same line as long as their parent element
+				provides them with enough space. If you have too many inline elements on the
+				same line, then they go to the next one. 
+
+				Try putting a bunch of links together, and then resizing the browser with your mouse.
+				You'll see the links move to fit the width of the parent element (in this case, 
+				the page). 
+
+				==========================================
+				Links without a destination: #
+				==========================================
+
+				Again, when you are designing, you might not have all of your content ready to
+				go yet. To put a placeholder link, you can put a # character for the value
+				of the href attribute. The link will still show, but when you click on it, it 
+				won't go anywhere.
+
+				The # character has a more specific purpose that we'll study when we look
+				in the with_css.html file. 
+			-->
 		<a href="http://github.com/tsurantino/">Twitter</a>
 		<a href="http://linkedin.com/in/arturtsurkan">LinkedIn</a>
 		
 		<h2>Projects</h2>
+
 		<!--
-			==========================================
-			Lists
-			==========================================
-		-->
+				==========================================
+				Lists
+				==========================================
+
+				The next set of elements we'll learn about refers to creating lists on a
+				page. Maybe you have a recipe, or set of bullets that you want to display
+				on a page. HTML provides a number of tools to make it happen. 
+
+				You start by defining a sectin of a set of list items with either the
+				ul or ol tag. UL stands for Unordered List and OL stands for Ordered List.
+				Within either of these elements, you can then define a set of list item
+				elements using the li tag. Below is a simple example of a bulleted list:
+
+				<ul>
+					<li>Bullet 1</li>
+					<li>Bullet 2</li>
+				</ul>
+
+				There is something really interesting though that, we've done before,
+				but haven't really thought about. That is, rather than putting text
+				between tags, we're putting other elements. HTML tags will try to
+				describe any content that's between the tags.
+
+				So below, I extend the above example further. I put a link within
+				each bullet, and I try to "link" an image and a piece of text.
+
+				If you load the page, you'll see that when you hover of the image
+				or the text, it becomes clickable!
+			-->
 		<ul>
+			<!-- this creates the bullet -->
 			<li>
+				<!-- here we create the link -->
 				<a href="http://hackwestern.com/">
+					<!-- both of these items are now linked to hackwestern.com! -->
 					<img src="img/logo.png" />
 					Hack Western
 				</a>
@@ -90,22 +314,52 @@
 				</a>
 			</li>
 		</ul>
+
 		<h2>Upcoming Events</h2>
+
 		<!--
 			==========================================
 			Tables
 			==========================================
+
+			Another tool that HTML provides you with out of the box is the ability
+			to add tables to your web page. Tables borrow the similar pattern of
+			embedding elements within elements to construct the final result.
+
+			One major caveat is that, because HTML follows a line-by-line, indentation
+			style, you can't layout your table in a natural row by column format.
+
+			See below for a line by line walkthrough:
 		-->
+		<!-- this defines the table, if you just had this, we wouldn't see anything -->
 		<table>
+			<!-- a table has 3 major parts
+				head: the names of each column
+				body: individual rows of data
+				foot: the last row
+			-->
 			<thead>
+				<!-- each section consists of rows, which we define with tr, a table row -->
 				<tr>
+					<!-- each row consists of table data: td. Each td item represents a column.
+					Be very careful with this! you must have a consistent number of columns
+					in each row. If you want a single table data item to take up more than
+					one column of space, you use the colspan attribute, i.e.
+
+						<td colspan="2">A data item that takes up 2 columns</td>
+
+					Takes up "2 columns" of space. 
+					-->
 					<td>Event Name</td>
 					<td>Location</td>
 					<td>Date</td>
 				</tr>
 			</thead>
+			<!-- now we define the body. The body elements means that these rows will
+			always be between the rows in thead, and tfoot -->
 			<tbody>
 				<tr>
+					<!-- note how the number of td items matches up with the td items before! -->
 					<td>Zero to Hero</td>
 					<td>Western University</td>
 					<td>March 5, 2015</td>
@@ -114,17 +368,36 @@
 		</table>
 
 		<h2>Contact Me</h2>
+
 		<!--
-			==========================================
-			Forms
-			==========================================
-		-->
+				==========================================
+				Forms
+				==========================================
+
+				Forms are going to be a very interesting HTML element that we're really only
+				going to "get" in Week 2. The basic gist is that forms allow us to take
+				information from the user, and bring it to "us". We can use that information
+				to manipulate the website, add new sections, etc.
+
+				A simple example are Tweets. Twitter has a form for you to input a tweet. When
+				you submit the tweet, that data goes to Twitter, and then Twitter uses it to
+				added it to the Twitter timeline when you load the page again.
+
+				We'll learn how to do the latter part of that process later, but for now, we want
+				to know how to lay out and get information from the user. That's done through forms.
+
+				Each form has a set of two elements: a label and an input. There are MANY
+				types of form elements that you can look at here:
+
+				https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms
+			-->
 		<form>
 			<label>Your Email:</label>
 			<input type="text" />
 			<label>Your Subject:</label>
 			<input type="text" />
 			<label>Content:</label>
+			<!-- this is a larger text input -->
 			<textarea></textarea>
 	</body>
 </html>

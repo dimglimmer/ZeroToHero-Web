@@ -3,6 +3,9 @@
  * 	Comment
  *******************************************************
 
+ Like in HTML, you can define comments in CSS. Comments are defined between
+ the following characters: /*  and * / (no space. I cannot put these together,
+ as it will break this comment I am using to annotate the page).
  */
 
 /*
@@ -10,13 +13,95 @@
  * 	CSS rules
  *******************************************************
  
+ CSS works by defining a set of rules of HTML elements. This involves the 
+ following pattern:
+ 	- pick what element you want to apply rules to
+ 	- decide what rules you want to use/things you want to change
+ 	- decide what values you want for each rule
+
+ The structure looks like so:
+	
+	element {
+		rule-name: value;
+	}
+
+ The braces are very important for indicating the start and end of a set 
+ of rules. The colon (:) separates the name and value of a rule. The 
+ semi-colon (;) indicates the end of a rule name/value pair. 
+
+ Also, be careful to note that rules "cascade". That means that rules that
+ are applied to one element are automatically applied to elements within that
+ element. 
+
+ Thus, when we change the text color in body, we change the text
+ color of everything in body. 
  */
 body {
 	/*
 	 *******************************************************  
 	 * 	Colours
 	 *******************************************************
+	 There are two types of colours we can set for an element, the text
+	 and background colours. For each rule, we can set multiple types
+	 of values (see below):
+
+	 *******************************************************  
+	 * Color values: Text
+	 *******************************************************  
+
+	 The first type of value you can set is a basic text value. CSS comes preloaded
+	 with a variety of colours which you can look at through this link:
+
+	 http://www.crockford.com/wrrrld/color.html
+
+	 Just set the background-color or color value to be white, black, etc. to get
+	 the desired result. 
+	
+	 *******************************************************  
+	 * Color values: Hex
+	 *******************************************************  
+
+	 The most common option for setting colors is to use HEX values. 
+	 At the most basic level, all you need to know is that HEX values are a
+	 more complex system that you use to incorporate a greater variety of colours
+	 on your page. With HEX, you can set virtually any colour that you want.
+
+	 To select specific colours, you can use the following website:
+
+	 http://colorpicker.com/
+
+	 Use the tool to get a colour, and then copy the 6 character code to your CSS file.
+	 Make sure to prepend it with the # character in order to make it a valid hex value.
+
+	 To read more about how Hex values work for colors, visit:
+
+	 http://www.smashingmagazine.com/2012/10/04/the-code-side-of-color/
+
+	 *******************************************************  
+	 * Color values: RGB
+	 *******************************************************  
+
+	 Colors can also be represented using the RGB system, which stands for Red, Green, Blue.
+
+	 The idea is that, a combination of these colors can produce a variety of other colors. 
+	 You'll have to find other web resources to see how to add RGB colors to CSS. Here is a 
+	 basic example: 
+
+	 	color: rgb(0, 0, 0);
 	 
+	 I normally don't use RGB unless I want to use RGBA for transperency. 
+
+	 *******************************************************  
+	 * Color values: RGBA
+	 *******************************************************   
+
+   If you want to have a semi-transperent coloured background, you'll want to use RGBA.
+   The difference between RGB and RGBA is the addition of a 4th value, which stands for
+   "alpha". It is a value between 0 and 1, where 0 is totally transperent, and 1 is totally filled.
+
+  	color: rgba(0, 0, 0, 0.6);
+
+   Means the background will be 60% opaque. 
 	 */
 	background-color: #A81B1B;
 	color: white;
@@ -26,8 +111,33 @@ body {
 	 * 	Images and Files
 	 *******************************************************
 	 
+	 You can also set an image as a background for an element. This works similar to the image tag,
+	 in that you can either use a link or a file. 
+
+	 There is one caveat for using a file, however. When the web browser tries to look for the file,
+	 it starts from the location of THIS css file. If you have your image in a folder that's different
+	 from the css file, and that's in a different location from the css folder, then you'll need
+	 to use a seperate path pattern.
+
+	 Here is an example. Suppose I want to use me.png that's in the img folder. If I'm starting
+	 in the same folder as the css file, then I am starting in the css folder. To get to the img folder,
+	 I need to go "up" one folder, and then go inside img/. To do that, I use ../ in my path.
+
+	 The final result looks something like this:
+
+	 	background-image: url('../img/me.png');
+
+ 	 Each time we use ../ we are telling the browser to go "up" one folder. Each time we write the
+ 	 name of the folder followed by /, we are telling the browser to go inside that folder.
 	 */
 	background-image: url('http://kylebstiff.files.wordpress.com/2013/04/red-sun-over-desert.jpg');
+
+	/* 
+	 There are many ways to layout the background image. cover will make sure the image
+	 covers the screen no matter what the layout is. For more options, visit:
+
+	 https://developer.mozilla.org/en-US/docs/Web/CSS/background-size
+	*/
 	background-size: cover;
 
 	/*
@@ -35,8 +145,71 @@ body {
 	 * 	Fonts
 	 *******************************************************
 	 
+	 You can change the fonts that are used for text on the page. This property is interesting
+	 because you can actually list multiple values, which are separated by a comma. 
+
+	 You have to put specific font names in single quotations, and you must make sure these
+	 correspond to the exact names of the fonts. Fonts are commonly installed on the users system
+	 so no two computers should have the same font but with a different name. 
+
+	 *******************************************************   
+	 * Dealing with fonts not on a users system
+	 *******************************************************  
+
+	 Believe it or not, not all computer systems have the same fonts. One specific difference
+	 is with the Helvetica font family, which is only available on Mac OS X. If a user doesn't
+	 have this font, it will default back to the browser default, which is usually Times.
+
+	 To make sure we default to a smoother font that's like Helvetica, we'll want to default
+	 to sans-serif, which is a default keyword in CSS. 
+	
+	 *******************************************************   
+	 * Installing custom fonts
+	  *******************************************************  
+
+   You might be frustrated by the lack of selection of common fonts on user systems. If you
+   want to install your own fonts, you can use servics online to make the browser download
+   the font and use it for your website. 
+
+   Google has a create repository of different fonts you can use: http://www.google.com/fonts/
+
+   Simply pick one of the fonts, like "Open Sans", and click on Quick Use (the middle button on
+   the bottom right of the section for that font). Scroll down on the page until you find
+   a line like this one:
+
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+   Add this to your HTML file where you reference this CSS file. 
+
+   Alternatively, you can reference the font in your CSS by clicking the import tab on the Google
+   Fonts website (where you got the link code). The code should look like this.
+
+   @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+   Then you can use the font like so:
+   
+   font-family: 'Open Sans', sans-serif;
+
 	 */
 	font-family: 'Helvetica', sans-serif;
+
+	/*
+	 *******************************************************  
+	 * 	Sizes
+	 *******************************************************
+	 
+	 Here I set the font size to be a specific number of pixels. Pixels are a fixed value that 
+	 will be consistently rendered across screen sizes. There are a lot of other types of values
+	 that you can use to make the website respond to the screen and scale accordingly.
+
+	 For more information on this, see: 
+	 	http://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/
+	 	http://stackoverflow.com/questions/609517/why-em-instead-of-px
+
+	 The rule of thumb will be that when we want things to me fixed, we use pixels.
+	 When we want scalability, we'll use % for sections, and em for fonts. 
+
+	 */
 	font-size: 16px;
 }
 
@@ -45,19 +218,22 @@ body {
  * 	Selection: Elements
  *******************************************************
  
+ Selection broadly refers to the question: how can I decide what elements I apply rules to?
+ For selection, we have 3 options: elements, classes, ids. There are more complex selection
+ rules which you can read about here:
+
+ http://learn.shayhowe.com/advanced-html-css/complex-selectors/
+
+ Below is a sample piece of code that selects all h1 elements on this page. That means that
+ all h1 elements, irrespective of what div they are in, will have a font-size of 50 pixels.
+
  */
 h1 {
 	font-size: 50px;
 }
 
-/*
- *******************************************************  
- * 	Sizes
- *******************************************************
- 
- */
 h2 {
-	font-weight: normal;
+	font-weight: normal; /* remove bold effect */
 	font-size: 26px;
 }
 
@@ -69,31 +245,146 @@ a {
  *******************************************************  
  * 	Selection: IDs
  *******************************************************
- 
- */
-#my-name {
+ Recall, an IDs are unique names we can give to only 1 element on a page. This means that
+ using the ID attribute, I can change the visual style of that one element, in a way that
+ is different from other rules, and other h1 elements. 
 
+ myname was applied to an h1 element, and, because this rule appears LOWER in the CSS document,
+ I can actually override existing styles, and apply new ones. 
+
+ Further, I know that myname is an ID because I use the # character before the name of the id.
+ */
+#myname {
+	font-size: 60px; /* make this h1 a bit bigger */
+	text-decoration: underline; /* add an underline to this h1 */
 }
 
 /*
  *******************************************************  
  * 	Selection: Classes
  *******************************************************
- 
+
+ Here we access classes by using the . character before the name of the class. This means that
+ the rules applied to this class, will be applied to ALL of the elements that have this class
+ set as an attribute.
+ 	
  */
 .rounded-img {
-	border-radius: 15px;
+	border-radius: 15px; /* give this image a bit of a rounded edge */
 }
 
 /*
  *******************************************************  
+ *  The Box Model
+ *******************************************************
+
+ Each HTML element on a page is enclosed in a rectangular box. That means that every text,
+ header, image, and even div is enclosed in a box that you can manipulate with CSS.
+
+ Margins: affects the area outside the box. You can set its value in px, em, or %
+ 	When you set the margin, it will push everything around the box by the value of it.
+ 	You can set the margin values generally, or specifically by setting top, left, right, bottom
+
+ Borders: affects the size of the border of the box. You can set this value in px.
+ 	You can also set the colour and style of the box, i.e.
+
+ 	.bordered-box {
+		border: 1px solid black;
+ 	}
+
+ Padding: affects the area inside the box. When you set the padding, it will push 
+ the contents of the box away from the border. 
+
+ You'll want to be very careful deciding whether you want to change the margin or padding
+ of a box in order to move two elements away from one another.
+
+ For more on this, visit: http://learn.shayhowe.com/html-css/opening-the-box-model/
+
+ *******************************************************  
  * 	Positioning
  *******************************************************
+ 
+ Besides setting rules for individual features of elements, we can also move elements
+ around. I'm going to go into more detail about 3 rules you can
+ use to move elements around.
+
+ This is going to be a relatively broad look. For more detail, please read this article:
+ http://learn.shayhowe.com/advanced-html-css/detailed-css-positioning/
+
  display Attribute
+
+ 	Recall. CSS treats HTML elements like boxes. Boxes can either be blocks, which means
+ 	they take up the entire width of the page, and new block elements go on the next line.
+ 	Boxes can also be inline, which means they can display on the same line as their neighbours.
+
+ 	You can change whether a box is a block or inline by using the display property. 
+
+ 	You can put two boxes together by setting them both to display: inline; and making sure
+ 	each has enough space to be on the same line (by changing their width) i.e.
+
+ 	p {
+		width: 5%;
+		display: inline;
+ 	}
 
  position Attribute
 
+ 	Position moves HTML elements to a precise position on the page. By default, positions
+ 	are set to relative (i.e., relative to other elements), and you can set the top, bottom,
+ 	left, right rules to be a certain % or unit away from nearby elements, i.e.
+
+ 	h1 {
+		position: relative;
+		top: 5%;
+ 	}
+	
+	You can also set it to absolute, which means to set it to an exact position on the page.
+	Often, websites will use this to have one HTML element appear on top of others, for example,
+	modern web browsers have a fixed navigation bar at the top of web pages.
+
+	For more on this, read: https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/
+
  float Attribute
+
+ 	float moves an element to the far left or far right of the element its in. Everything around it
+ 	is wrapped around it (i.e. text). Note, if you want to float elements to be beside each other, you must
+ 	make sure that they take up the space that's allocated in the element they are in. This can be a general %, 
+ 	which must add up to 100, or it must add up to a specific pixel sum.
+
+ 	For example, if the containing element is 600 px wide, then the elements within it that have
+ 	a float property set must add up to 600 px. 
+
+ 	To stop text wrapping, you'll need to declare a block level element after the element with a float, but
+ 	set its property to be clear: both; For example:
+
+	HTML:
+
+ 	<div class="left-column">
+ 	</div>
+ 	<div class="right-column">
+ 	</div>
+ 	<div class="end-columns">
+ 	</div>
+
+ 	CSS: 
+
+ 	.left-column {
+		float: left;
+		width: 30%;
+ 	}
+
+ 	.right-column {
+		float: right;
+		70%;
+ 	}
+
+ 	.end-columns {
+		clear: both; 
+ 	}
+
+ In general, I recommend this to be an Advanced component. If you want to understand
+ positioning in depth, it means you want to do advanced layouts. You should look
+ for other materials that discuss it in length, such as the link above. 
 
  */
 .push-left {
@@ -116,6 +407,22 @@ a {
  * 	Selection: Filtering
  *******************************************************
  
+ We can do a more specific type of selection by selecting only specific elements that
+ are within another element. In this case, we affect the imgs that are within push-left.
+ 
+ This pattern can be extended in two ways. First, you can actually filter by a variety
+ of selectors, not necessarily elements. You can actually apply rules to classes
+ that are within other classes, for example:
+
+ 	.left-column .headings {
+		... rules that apply to headings in left column
+ 	}
+
+ You can also continue narrowing down further by adding more names separated by spaces:
+
+ 	.left-column .section img {
+		... rules that apply to images in section classes that are in the left column
+ 	}
  */
 .push-left img {
 	width: 60%;
@@ -129,18 +436,21 @@ a {
  *******************************************************  
  * 	Working with Lists
  *******************************************************
- 
+ 	Here are a few neat properties to working with lists...
  */
 ul {
+	/* remove the bullets via list style, and the indentation by removing the padding */
 	list-style: none;
 	padding-left: none;
 }
 
 li {
+	/* put all of the list items on one line by affecting their display property */
 	display: inline;
 }
 
 li a {
+	/* remove the underline */
 	text-decoration: none;
 }
 
@@ -148,15 +458,21 @@ li a {
  *******************************************************  
  *  Working with Tables
  *******************************************************
- 
+ A few neat properties for working with tables...
  */
 table {
 	border-spacing: 0px;
+	/* make the table fit the whole width of the element its in */
 	width: 100%;
 }
 
 table td {
+	/* I wanted to get rid of the white borders, so I set it to white,
+	you can also probably set it to none or something to that sense */
 	border: 1px solid white;
+
+	/* I wanted more spacing in the individual cells so they aren't so close to
+	one another. I used padding in this case, because I wanted the borders to touch */
 	padding: 10px;
 }
 
@@ -164,19 +480,34 @@ table td {
  *******************************************************  
  * 	Working with Forms
  *******************************************************
- 
+ Some neat patterns for manipulating forms...
  */
-form {
 
-}
+/* Here I use a comma to apply the same rule to both sets of items, in this case, 
+ the code below is equivalent to writing:
 
+ form label {
+ 	display: block;
+ }
+
+ form input {
+	display: block;
+ }
+
+ To avoid repeating myself, I put these on one line with a comma
+*/
 form label, form input {
+	/* I set these to display as a block so they appear on one line */
 	display: block;
 }
 
 form input {
+	/* Increase the font size, spacing within the text box, and the width to
+	take up the full width of the parent element */
 	font-size: 16px;
 	padding: 10px;
+
+	/* I want these to be spaced out a bit more, so I increase the spacing below it */
 	margin-bottom: 20px;
 	width: 100%;
 }

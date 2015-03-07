@@ -1,0 +1,197 @@
+http://stocktwits.com/research/Predictability-of-stock-market-behavior-using-stocktwits-sentiment-and-posting-volume_NunoOliveira.pdf
+http://apps.cs.utexas.edu/tech_reports/reports/tr/TR-2124.pdf
+http://www.cs.uic.edu/~liub/publications/ACL-2013-Jianfeng-stock-short.pdf
+http://hughchristensen.co.uk/papers/socialNetworking/1010.3003v1.pdf
+http://homepages.inf.ed.ac.uk/miles/msc-projects/wolfram.pdf
+http://www.cs.ucr.edu/~vagelis/publications/wsdm2012-microblog-financial.pdf
+http://cs229.stanford.edu/proj2011/ChenLazer-SentimentAnalysisOfTwitterFeedsForThePredictionOfStockMarketMovement.pdf
+http://cs229.stanford.edu/proj2011/DebbiniEstinGoutagny-ModelingTheStockMarketUsingTwitterSentimentAnalysis.pdf
+http://arxiv.org/pdf/1305.7014.pdf
+http://www.stat.berkeley.edu/~aldous/157/Old_Projects/Sang_Chung_Sandy_Liu.pdf
+
+Web 1
+	http://www.vandelaydesign.com/personal-websites/
+	www.smashingmagazine.com/2009/07/30/50-fresh-portfolio-websites-for-your-inspiration/
+
+	http://learn.shayhowe.com/
+	https://developer.mozilla.org/en-US/docs/Web/Guide/HTML
+
+	Cheat sheets
+
+	http://skillcrush.com/wp-content/uploads/2012/06/HTML-Cheatsheet-Skillcrush.pdf
+	https://courses.cs.washington.edu/courses/cse154/13su/cheat-sheets/css-cheat-sheet.pdf
+
+	http://lesliefranke.com/sandbox/ref/htmlcheatsheet.pdf
+
+	http://overapi.com/html/
+	http://overapi.com/css/
+
+
+Things to cover:
+
+	HTML vs. CSS
+		HTML is for structure and content
+		CSS is for design and layout
+
+  Comments
+
+	Basic document structure
+		Head -> meta
+		Body -> rendered
+
+	HTML
+		Consists of elements that describe content on a page
+		It's a special language for the browser to translate text into something meaningful and presentable (to take arbitrary "img" text and show a picture)
+
+		What does it mean to describe content?
+			Surround it with tags
+				Becomes an element
+
+ Indentation is really important
+
+	Common tags
+		H1 tag ... how tags work
+			H1...H6
+		P tag
+
+		Img tag -> images
+			Files
+			Links
+
+		Anchor tag -> links
+			Attributes
+
+		Lists
+			Ul container
+			Li items
+
+		Tables
+			Header
+			Body
+				Rows
+					Cells
+
+		Forms
+			Why?
+
+	Indentation is super important!!!
+
+	CSS
+		Comments
+		What is a CSS rule
+			Selector
+			Braces
+				Property: Value;
+
+		Selection
+			Elements
+			Classes
+			Identities
+
+		Properties
+			Background-image
+			Background-color
+			Color
+				Text: 
+				RGB
+				Hex
+				Resource for getting colours
+			Fonts
+				Family
+				Size
+				Bold
+				Underlined
+				Custom fonts: Google
+
+		Sections
+			Divs
+			Spans
+
+		The Box Model + Google Chrome Developer Tools
+			Use color: white (text), dimgray, black, navy, red
+
+			Borders
+				3px solid #cc0000 -> multiple properties?
+			Padding
+				Combined
+				Per property
+			Margins
+				Combined
+				Per property
+				Auto
+
+		Positioning
+			Display
+				Inline-block
+				Block
+			Position
+				Absolute
+				Relative
+			Float
+				Left
+				Right
+				Clear
+
+		Stack Overflow
+			html textarea no resize
+
+	Bootstrap
+		Setting up
+		Accessing the documentation
+		Grid
+			Use borders on grids to make it clear
+		CSS
+			See how it modifies our common controls
+			Overriding Bootstrap
+		Components
+			Basic patterns re-implemented in an easy-to-use way
+
+		Getting an example page up and running
+			CSS
+			Javascript at the bottom
+
+		Containers
+		Grids
+		Thumbnails
+		Img-responsive
+		In-line styles/overriding bootstrap
+		Lines <hr />
+		Sections
+		Tabs -> styled lists
+			Active Tabs
+			Grid within a grid
+			Multiple classes
+		What is Javascript?
+		Tables...a bit of a joke
+		Forms!
+			Form groups
+			Form controls
+			Ids
+
+	Font-Awesome
+	Bootswatch
+
+	Todo:
+		Our contact form doesn't work
+		Editing this is cumbersome -> work with HTML
+
+		How can we make this work dynamically?
+
+	Next steps:
+		Join the Facebook group
+		Introduce yourself
+		Remix your personal page
+			Put it on Neocities
+			Share it with us on Facebook
+			One with the most likes gets a free Chromecast
+
+
+
+
+
+
+
+
+
+
+
